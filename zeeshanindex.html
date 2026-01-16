@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zeeshan Bajwa | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(120deg, #e0f2fe, #fef3c7);
+            color: #1f2933;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            text-align: center;
+            z-index: 100;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #1f2933;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 100px 20px 60px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            max-width: 500px;
+        }
+
+        .hero-img {
+            max-width: 280px;
+        }
+
+        .hero-img img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        section {
+            margin-top: 80px;
+        }
+
+        section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #2563eb;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background: white;
+            padding: 20px;
+            border-radius: 14px;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.6);
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== Animation ===== */
+        .fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+    <!-- ===== HERO ===== -->
+    <div class="hero fade">
+        <div class="hero-text">
+            <h1>Zeeshan Bajwa</h1>
+            <p>
+                BS Software Engineering student passionate about coding and web development.
+                I love building modern, responsive websites.
+            </p>
+        </div>
+
+        <div class="hero-img">
+            <img src="zeeshanimg.jpeg" alt="Zeeshan Bajwa">
+        </div>
+    </div>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="fade">
+        <h2>About Me</h2>
+        <div class="card">
+            I am a BS Software Engineering student with a strong interest in web development
+            and programming. I enjoy learning new technologies and improving my skills.
+        </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" class="fade">
+        <h2>Education</h2>
+
+        <div class="card">
+            <strong>BS Software Engineering</strong><br>
+            — Continuing
+        </div>
+
+        <div class="card">
+            <strong>FSc (Pre-Engineering)</strong><br>
+            Marks: 779 / 1100
+        </div>
+
+        <div class="card">
+            <strong>Matric</strong><br>
+            Marks: 752 / 1100
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="fade">
+        <h2>Skills</h2>
+
+        <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">WordPress</div>
+            <div class="skill">C++</div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="fade">
+        <h2>Contact</h2>
+        <div class="card">
+            <p><strong>Name:</strong> Zeeshan Bajwa</p>
+            <p><strong>Phone:</strong> +92 328 7288752</p>
+            <p><strong>Email:</strong> za1314314@gmail.com</p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    © 2026 Zeeshan Bajwa | Portfolio
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+    const fades = document.querySelectorAll(".fade");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    fades.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
